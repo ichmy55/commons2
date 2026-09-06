@@ -1,1 +1,14 @@
-../../src/commons1/.github/workflows/develop-pr.yml
+name: develop pull request
+
+on:
+  pull_request:
+    branches:
+      - development
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  actionlint-reviewdog:
+    uses: ./.github/workflows/actionlint-reviewdog.yml
